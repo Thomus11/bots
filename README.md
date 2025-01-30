@@ -1,8 +1,33 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+on the APP I have different functions
+1 Adding a Bot to the Army
+     it hecks if the bot is already in the army and if not it adds it to the army
 
-Currently, two official plugins are available:
+2 Removing a Bot from the Army
+     the filter removes the bot from the array based on its id  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ 3 Deleting the bot
+      this sends a delete to remove the bot from the backend
+       and the bot also disappears from the UI
+       (updates the bots state to exclude the deleted bot)
+
+  4 SORT
+      this function sort the bots based on a given   condtion eg health, damage, armor
+      and in a descending order and updates the bots state.
+
+   4 Filtering Bots 
+       if All is selected it refetches all the bots again from the API
+       otherwise it will filter based on the class
+       and filtering does not permanently the bots
+    
+    5 COMPONENTES
+       Fetch bots:	    useEffect + fetch("API_URL")
+       Display bots:	<BotCollection bots={bots} />
+       Add bot to army:	addToArmy(bot) (only adds once)
+       Remove from army:	removeFromArmy(bot)
+       Delete bot:	handleDelete(bot) → fetch(DELETE)
+       Sort bots:	handleSort(condition)
+       Filter bots:	handleFilter(botClass)
+       Navigation:	React Router <Routes>
+
+         
